@@ -4,10 +4,56 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Webpack App</title>
   </head>
   <body>
-    <h1 class="text-4xl text-blue-700">My Webpack + Tailwind App</h1>
+    <!-- Global Container -->
+    <section class="min-h-screen bg-rose-100 flex justify-center items-center">
+      <!-- Card Container -->
+      <div class="bg-slate-500">
+        <div>
+          <!-- Output Section-->
+          <div>
+            <input type="text" />
+            <button><i class="fa-regular fa-copy"></i></button>
+          </div>
+          <!-- Options Container -->
+          <div>
+            <p>character Length</p>
+            <input type="range" name="" id="" />
+            <div>
+              <input type="checkbox" />
+              <span>Include Uppercase</span>
+            </div>
+            <div>
+              <input type="checkbox" />
+              <span>Include Lowercase</span>
+            </div>
+            <div>
+              <input type="checkbox" />
+              <span>Include Numbers</span>
+            </div>
+            <div>
+              <input type="checkbox" />
+              <span>Include Special</span>
+            </div>
+          </div>
+          <div>
+            <!-- Strength Section-->
+          </div>
+          <div>
+            <button>Generate <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
     <script src="bundle.js"></script>
   </body>
 </html>
