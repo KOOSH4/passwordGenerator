@@ -11,25 +11,47 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Ubuntu+Mono&display=swap"
+      rel="stylesheet"
+    />
     <title>Webpack App</title>
   </head>
-  <body>
+  <body class="font-['Cutive_Mono']">
     <!-- Global Container -->
-    <section class="min-h-screen bg-rose-100 flex justify-center items-center">
+    <section class="min-h-screen bg-[#13121A] flex justify-center items-center">
       <!-- Card Container -->
-      <div class="bg-slate-500">
-        <div>
-          <!-- Output Section-->
-          <div>
-            <input type="text" />
-            <button><i class="fa-regular fa-copy"></i></button>
+      <div
+        class="bg-[#13121A] p-10 space-y-3 rounded-2xl text-gray-200 w-1/4 max-w-lg min-w-max"
+      >
+        <!-- Output Section-->
+        <div class="bg-[#24232B] flex justify-between">
+          <input type="text" class="bg-[#24232B] w-[100%] h-[100%] px-6 py-4" />
+          <button class="pr-6 text-[#A4FFAF]">
+            <i class="fa-regular fa-copy"></i>
+          </button>
+        </div>
+        <!-- Options Container -->
+        <div class="bg-[#24232B] p-6">
+          <div class="flex justify-between">
+            <span>character Length</span>
+            <span class="text-2xl text-[#A4FFAF]">8</span>
           </div>
-          <!-- Options Container -->
-          <div>
-            <p>character Length</p>
-            <input type="range" name="" id="" />
-            <div>
-              <input type="checkbox" />
+          <input
+            type="range"
+            name=""
+            id=""
+            min="1"
+            max="20"
+            class="w-full slider bg-[#24232B]"
+          />
+          <div class="space-y-2 mt-3">
+            <div class="spacs">
+              <input type="checkbox" class="text-[#A4FFAF]" />
               <span>Include Uppercase</span>
             </div>
             <div>
@@ -45,12 +67,12 @@
               <span>Include Special</span>
             </div>
           </div>
-          <div>
-            <!-- Strength Section-->
-          </div>
-          <div>
-            <button>Generate <i class="fa-solid fa-arrow-right"></i></button>
-          </div>
+        </div>
+        <div>
+          <!-- Strength Section-->
+        </div>
+        <div>
+          <button>Generate <i class="fa-solid fa-arrow-right"></i></button>
         </div>
       </div>
     </section>
