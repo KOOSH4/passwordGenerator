@@ -1,6 +1,5 @@
 import { stringify } from 'postcss';
 import './style.css';
-// slider section
 const slider = document.getElementById('myRange');
 const output = document.getElementById('outputLength');
 const upperEl = document.getElementById('upper');
@@ -29,23 +28,21 @@ clipboard.addEventListener('click', () => {
   textarea.select();
   document.execCommand('copy');
   textarea.remove();
-  // alert('copied');
-  // let clicked = true;
-  // generateBtn.innerHTML = 'Copied to Clipbourd!';
+
   changeText();
 });
 
 function changeText() {
   const btnCaption = generateBtn.innerHTML;
   generateBtn.textContent = 'Copied to Clipbourd!';
+  generateBtn.classList.add('copied');
   setTimeout(function () {
     generateBtn.innerHTML = btnCaption;
-  }, 3000);
+  }, 2000);
 }
 
 generateBtn.addEventListener('click', () => {
   const Length = +slider.value;
-  // console.log(Lenght);
   const hasUpper = upperEl.checked;
   const hasLower = lowerEl.checked;
   const hasNumber = numberEl.checked;
@@ -65,7 +62,6 @@ function generatePasswordHandler(lower, upper, number, special, Length) {
   const typesArr = [{ lower }, { upper }, { number }, { special }].filter(
     (item) => Object.values(item)[0]
   );
-  // console.log(typesArr);
   if (typesCounter === 0) {
     return '';
   }
@@ -82,7 +78,6 @@ function generatePasswordHandler(lower, upper, number, special, Length) {
       return 0.5 - Math.random();
     })
     .join('');
-  console.log(finalPass);
   return finalPassRandomized;
 }
 
@@ -103,7 +98,6 @@ function getRandomSpecial() {
 
   return specialLetters[k];
 }
-// console.log(getRandomSpecial());
 function getRandomNumber() {
   return Math.floor(Math.random() * 9);
 }
