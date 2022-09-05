@@ -29,8 +29,19 @@ clipboard.addEventListener('click', () => {
   textarea.select();
   document.execCommand('copy');
   textarea.remove();
-  alert('copied');
+  // alert('copied');
+  // let clicked = true;
+  // generateBtn.innerHTML = 'Copied to Clipbourd!';
+  changeText();
 });
+
+function changeText() {
+  const btnCaption = generateBtn.innerHTML;
+  generateBtn.textContent = 'Copied to Clipbourd!';
+  setTimeout(function () {
+    generateBtn.innerHTML = btnCaption;
+  }, 3000);
+}
 
 generateBtn.addEventListener('click', () => {
   const Length = +slider.value;
