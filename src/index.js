@@ -17,6 +17,20 @@ const randomFunc = {
   number: getRandomNumber,
   special: getRandomSpecial,
 };
+// Copy to clipbourd
+clipboard.addEventListener('click', () => {
+  const textarea = document.createElement('textarea');
+  const password = outputShow.innerText;
+  if (!password) {
+    return;
+  }
+  textarea.value = password;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand('copy');
+  textarea.remove();
+  alert('copied');
+});
 
 generateBtn.addEventListener('click', () => {
   const Length = +slider.value;
