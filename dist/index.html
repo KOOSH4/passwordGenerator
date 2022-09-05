@@ -30,11 +30,16 @@
       >
         <!-- Output Section-->
         <div class="bg-[#24232B] flex justify-between">
-          <input
+          <!-- <input
             type="text"
+            id="output"
             class="bg-[#24232B] text-gray-500 text-center text-2xl w-[100%] h-[100%] px-6 py-4 outline-none"
-          />
-          <button class="pr-6 text-[#A4FFAF]">
+          /> -->
+          <span
+            id="output"
+            class="bg-[#24232B] text-gray-500 text-center text-2xl w-[100%] h-[100%] px-6 py-4"
+          ></span>
+          <button class="pr-6 text-[#A4FFAF]" id="clipboardBtn">
             <i class="fa-regular fa-copy"></i>
           </button>
         </div>
@@ -56,8 +61,9 @@
             <div class="spacs">
               <input
                 type="checkbox"
-                name="upper"
-                value="upper"
+                name="uppers"
+                value="1"
+                id="upper"
                 checked
                 class="w-4 h-4 text-[#A4FFAF] border-none accent-[#A4FFAF] bg-gray-100 rounded-xl border-[#A4FFAF] focus:ring-[#A4FFAF] cursor-pointer"
               />
@@ -66,8 +72,9 @@
             <div>
               <input
                 type="checkbox"
-                name="lower"
-                value="lower"
+                name="lowers"
+                value="2"
+                id="lower"
                 checked
                 class="w-4 h-4 text-[#A4FFAF] border-none accent-[#A4FFAF] bg-gray-100 rounded-xl border-[#A4FFAF] focus:ring-[#A4FFAF] cursor-pointer"
               />
@@ -77,7 +84,8 @@
               <input
                 type="checkbox"
                 name="numbers"
-                value="number"
+                value="3"
+                id="number"
                 checked
                 class="w-4 h-4 text-[#A4FFAF] border-none accent-[#A4FFAF] bg-gray-100 rounded-xl border-[#A4FFAF] focus:ring-[#A4FFAF] cursor-pointer"
               />
@@ -86,8 +94,9 @@
             <div>
               <input
                 type="checkbox"
-                name="special"
-                value="special"
+                name="specials"
+                value="4"
+                id="special"
                 checked
                 class="w-4 h-4 text-[#A4FFAF] border-none accent-[#A4FFAF] bg-gray-100 rounded-xl border-[#A4FFAF] focus:ring-[#A4FFAF] cursor-pointer"
               />
@@ -98,6 +107,7 @@
             <!-- Strength Section-->
           </div>
           <button
+            id="generateBtn"
             class="w-full h-full bg-[#A4FFAF] text-[#24232B] font-bold py-2 mt-3 cursor-pointer hover:bg-[#7bfb8a] transition-all duration-300"
           >
             Generate <i class="fa-solid fa-arrow-right"></i>
