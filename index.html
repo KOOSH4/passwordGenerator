@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Ubuntu+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <title>Webpack App</title>
+  </head>
+  <body class="font-['Cutive_Mono']">
+    <!-- Global Container -->
+    <section class="min-h-screen bg-[#13121A] flex justify-center items-center">
+      <!-- Card Container -->
+      <div
+        class="bg-[#13121A] p-6 w-[90%] md:w-3/5 lg:w-[40%] max-w-md space-y-3 rounded-2xl text-gray-200"
+      >
+        <!-- Output Section-->
+        <div class="bg-[#24232B] flex justify-between">
+          <span
+            id="output"
+            class="bg-[#24232B] text-gray-500 text-center text-2xl w-[100%] h-14 px-3 py-4"
+          ></span>
+          <button class="pr-6 text-[#A4FFAF]" id="clipboardBtn">
+            <i class="fa-regular fa-copy"></i>
+          </button>
+        </div>
+        <!-- Options Container -->
+        <div class="bg-[#24232B] p-6">
+          <div class="flex justify-between">
+            <span>character Length</span>
+            <span class="text-2xl text-[#A4FFAF]" id="outputLength">8</span>
+          </div>
+          <input
+            type="range"
+            name=""
+            id="myRange"
+            min="1"
+            max="20"
+            class="w-full slider bg-[#24232B]"
+          />
+          <div class="space-y-2 mt-3">
+            <div class="spacs">
+              <input
+                type="checkbox"
+                name="uppers"
+                value="1"
+                id="upper"
+                checked
+                class="w-4 h-4 text-[#A4FFAF] border-none accent-[#A4FFAF] bg-gray-100 rounded-xl border-[#A4FFAF] focus:ring-[#A4FFAF] cursor-pointer"
+              />
+              <span>Include Uppercase</span>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="lowers"
+                value="2"
+                id="lower"
+                checked
+                class="w-4 h-4 text-[#A4FFAF] border-none accent-[#A4FFAF] bg-gray-100 rounded-xl border-[#A4FFAF] focus:ring-[#A4FFAF] cursor-pointer"
+              />
+              <span>Include Lowercase</span>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="numbers"
+                value="3"
+                id="number"
+                checked
+                class="w-4 h-4 text-[#A4FFAF] border-none accent-[#A4FFAF] bg-gray-100 rounded-xl border-[#A4FFAF] focus:ring-[#A4FFAF] cursor-pointer"
+              />
+              <span>Include Numbers</span>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="specials"
+                value="4"
+                id="special"
+                checked
+                class="w-4 h-4 text-[#A4FFAF] border-none accent-[#A4FFAF] bg-gray-100 rounded-xl border-[#A4FFAF] focus:ring-[#A4FFAF] cursor-pointer"
+              />
+              <span>Include Special</span>
+            </div>
+          </div>
+          <div>
+            <!-- Strength Section-->
+          </div>
+          <button
+            id="generateBtn"
+            class="w-full h-full bg-[#A4FFAF] text-[#24232B] font-bold py-2 mt-3 cursor-pointer hover:bg-[#7bfb8a] transition-all duration-300"
+          >
+            Generate <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+    <script src="bundle.js"></script>
+  </body>
+</html>
