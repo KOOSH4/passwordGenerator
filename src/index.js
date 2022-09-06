@@ -9,6 +9,9 @@ const specialEl = document.getElementById('special');
 const outputShow = document.getElementById('output'); //result
 const clipboard = document.getElementById('clipboardBtn');
 const generateBtn = document.getElementById('generateBtn');
+let themeToggleBtn = document.getElementById('theme-toggle');
+let themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+let themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
 
 const randomFunc = {
   lower: getRandomLower,
@@ -104,9 +107,15 @@ function getRandomNumber() {
 
 // darkmode
 
-var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
-
+if (
+  localStorage.getItem('color-theme') === 'dark' ||
+  (!('color-theme' in localStorage) &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches)
+) {
+  document.documentElement.classList.add('dark');
+} else {
+  document.documentElement.classList.remove('dark');
+}
 if (
   localStorage.getItem('color-theme') === 'dark' ||
   (!('color-theme' in localStorage) &&
@@ -117,9 +126,8 @@ if (
   themeToggleDarkIcon.classList.remove('hidden');
 }
 
-var themeToggleBtn = document.getElementById('theme-toggle');
-
-themeToggleBtn.addEventListener('click', function () {
+themeToggleBtn.addEventListener('click', function (event) {
+  event.preventDefault();
   // toggle icons inside button
   themeToggleDarkIcon.classList.toggle('hidden');
   themeToggleLightIcon.classList.toggle('hidden');
