@@ -19,30 +19,75 @@
       href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Ubuntu+Mono&display=swap"
       rel="stylesheet"
     />
-    <title>Webpack App</title>
+    <title>Password Generator</title>
   </head>
   <body class="font-['Cutive_Mono']">
     <!-- Global Container -->
-    <section class="min-h-screen bg-[#13121A] flex justify-center items-center">
+    <section
+      class="min-h-screen dark:bg-[#13121A] bg-[#fafafa] flex justify-center items-center relative transition-all duration-200"
+    >
+      <!-- dark mode toggle -->
+
+      <div class="absolute top-2 right-2">
+        <button
+          id="theme-toggle"
+          type="button"
+          class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
+        >
+          <svg
+            id="theme-toggle-dark-icon"
+            class="hidden w-5 h-5"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+            ></path>
+          </svg>
+          <svg
+            id="theme-toggle-light-icon"
+            class="hidden w-5 h-5"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
       <!-- Card Container -->
+
       <div
-        class="bg-[#13121A] p-6 w-[90%] md:w-3/5 lg:w-[40%] max-w-md space-y-3 rounded-2xl text-gray-200"
+        class="dark:bg-[#13121A] bg-[#e4e5f1] p-6 w-[90%] md:w-3/5 lg:w-[40%] max-w-md space-y-3 text-gray-200"
       >
         <!-- Output Section-->
-        <div class="bg-[#24232B] flex justify-between">
+        <div class="dark:bg-[#24232B] bg-gray-400 flex justify-between">
           <span
             id="output"
-            class="bg-[#24232B] text-gray-500 text-center text-2xl w-[100%] h-14 px-3 py-4"
+            class="dark:bg-[#24232B] bg-gray-400 dark:text-[#A4FFAF] text-[#484b6a] text-center text-2xl w-[100%] h-14 px-3 py-4"
           ></span>
-          <button class="pr-6 text-[#A4FFAF]" id="clipboardBtn">
+          <button
+            class="pr-6 dark:text-[#A4FFAF] text-[#484b6a]"
+            id="clipboardBtn"
+          >
             <i class="fa-regular fa-copy"></i>
           </button>
         </div>
         <!-- Options Container -->
-        <div class="bg-[#24232B] p-6">
+        <div class="dark:bg-[#24232B] bg-gray-400 p-6">
           <div class="flex justify-between">
-            <span>character Length</span>
-            <span class="text-2xl text-[#A4FFAF]" id="outputLength">8</span>
+            <span class="dark:text-gray-200 text-[#484b6a]"
+              >character Length</span
+            >
+            <span
+              class="text-2xl dark:text-[#A4FFAF] text-[#484b6a]"
+              id="outputLength"
+            ></span>
           </div>
           <input
             type="range"
@@ -50,9 +95,9 @@
             id="myRange"
             min="1"
             max="20"
-            class="w-full slider bg-[#24232B]"
+            class="w-full slider dark:bg-[#A4FFAF] dark:"
           />
-          <div class="space-y-2 mt-3">
+          <div class="space-y-2 mt-3 dark:text-gray-200 text-[#484b6a]">
             <div class="spacs">
               <input
                 type="checkbox"
@@ -60,7 +105,7 @@
                 value="1"
                 id="upper"
                 checked
-                class="w-4 h-4 text-[#A4FFAF] border-none accent-[#A4FFAF] bg-gray-100 rounded-xl border-[#A4FFAF] focus:ring-[#A4FFAF] cursor-pointer"
+                class="w-4 h-4 text-[#A4FFAF] border-none dark:accent-[#A4FFAF] accent-[#484b6a] bg-gray-100 rounded-xl border-[#A4FFAF] focus:ring-[#A4FFAF] cursor-pointer"
               />
               <span>Include Uppercase</span>
             </div>
@@ -71,7 +116,7 @@
                 value="2"
                 id="lower"
                 checked
-                class="w-4 h-4 text-[#A4FFAF] border-none accent-[#A4FFAF] bg-gray-100 rounded-xl border-[#A4FFAF] focus:ring-[#A4FFAF] cursor-pointer"
+                class="w-4 h-4 text-[#A4FFAF] border-none dark:accent-[#A4FFAF] accent-[#484b6a] bg-gray-100 rounded-xl border-[#A4FFAF] focus:ring-[#A4FFAF] cursor-pointer"
               />
               <span>Include Lowercase</span>
             </div>
@@ -82,7 +127,7 @@
                 value="3"
                 id="number"
                 checked
-                class="w-4 h-4 text-[#A4FFAF] border-none accent-[#A4FFAF] bg-gray-100 rounded-xl border-[#A4FFAF] focus:ring-[#A4FFAF] cursor-pointer"
+                class="w-4 h-4 text-[#A4FFAF] border-none dark:accent-[#A4FFAF] accent-[#484b6a] bg-gray-100 rounded-xl border-[#A4FFAF] focus:ring-[#A4FFAF] cursor-pointer"
               />
               <span>Include Numbers</span>
             </div>
@@ -93,7 +138,7 @@
                 value="4"
                 id="special"
                 checked
-                class="w-4 h-4 text-[#A4FFAF] border-none accent-[#A4FFAF] bg-gray-100 rounded-xl border-[#A4FFAF] focus:ring-[#A4FFAF] cursor-pointer"
+                class="w-4 h-4 text-[#A4FFAF] border-none dark:accent-[#A4FFAF] accent-[#484b6a] bg-gray-100 rounded-xl border-[#A4FFAF] focus:ring-[#A4FFAF] cursor-pointer"
               />
               <span>Include Special</span>
             </div>
@@ -103,7 +148,7 @@
           </div>
           <button
             id="generateBtn"
-            class="w-full h-full bg-[#A4FFAF] text-[#24232B] font-bold py-2 mt-3 cursor-pointer hover:bg-[#7bfb8a] transition-all duration-300"
+            class="w-full h-full dark:bg-[#A4FFAF] bg-[#484b6a] dark:text-[#24232B] text-[#e4e5f1] font-bold py-2 mt-3 cursor-pointer dark:hover:bg-[#7bfb8a] hover:bg-[#686b9f] transition-all duration-300"
           >
             Generate <i class="fa-solid fa-arrow-right"></i>
           </button>
